@@ -32,14 +32,14 @@ num_mirrors <- 2
 
 # ---------------Read Training Info----------------------------------------------------
 # Read files for rectangles for which you have training data (land cover / land use)
-cuads <- list.files("D:/Drive/Jonathan_trabaggio/Doctorado/GeoInfo/TiposVeg_points/cuads",
+cuads <- list.files("cuads",
                     "*.shp$",
                     full.names = T)
 cuads <- lapply(cuads, shapefile)
 
 # Locations of image files
-optic_names <- "D:/Drive/Jonathan_trabaggio/Doctorado/GeoInfo/Sentinel-2/Cropped_GEE/MCBA/4B_10m_2019-7-4.tif"
-radar_names <- "D:/Drive/Jonathan_trabaggio/Doctorado/GeoInfo/Sentinel-1y-2_comb/SingleDate_2019-06-15-07-15_VV_VH_RGI_gamma0_MaxCCL20.tif"
+optic_names <- "Sentinel-2_im.tif"
+radar_names <- "Sentinel-1_im.tif"
 
 # Read images as stacks
 optic <- stack(optic_names)
@@ -50,7 +50,7 @@ radar <- stack(radar_names)
 optic <- stack(optic,radar[[1:2]])
 
 # Labels: Read files of manually classificated areas 
-masks_list <- list.files("D:/Drive/Jonathan_trabaggio/Doctorado/GeoInfo/TiposVeg_points/masks",
+masks_list <- list.files("masks",
                          "*.shp$",
                          full.names = T)
 masks <- lapply(masks_list, shapefile)
@@ -276,7 +276,7 @@ plot(train_y_data_final[1,1:img_height_exp,1:img_width_exp,11] %>% as.cimg())
 # This option was prefered as a single file can contain both training and test data
 np <- import("numpy")
 
-np$savez("Lacandona_LULC_2019_OpticRadar_Augment16perim.npz", 
+np$savez("Img_Preprocess/train_test_sets.npz", 
          x_train = train_x_data_final, 
          y_train = train_y_data_final, 
          x_test = test_x_data_final, 

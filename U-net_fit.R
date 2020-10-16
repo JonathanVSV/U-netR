@@ -36,7 +36,7 @@ img_height_pred <- 128
 imagery <- "OpticRadar"
 
 #Folder containing the npz file
-train_image_files_path <- file.path(paste0("D:/Drive/Jonathan_trabaggio/Doctorado/R/PhD_DeepLearning/Img_Preprocess"))
+train_image_files_path <- file.path(paste0("Img_Preprocess"))
 #---------------------------Read inputs-------------------------
 
 # RDS option
@@ -51,7 +51,7 @@ train_image_files_path <- file.path(paste0("D:/Drive/Jonathan_trabaggio/Doctorad
 np <- import("numpy")
 
 # Load npz
-npz2 <- np$load(paste0(train_image_files_path,"/","Lacandona_LULC_2019_OpticRadar.npz"))
+npz2 <- np$load(paste0(train_image_files_path,"/","train_test_sets"))
 # See files
 # npz2$files
 
@@ -126,7 +126,6 @@ save_model_hdf5(model, paste0("U128model",imagery,
                               "layers",num_layers,
                               "dropout", dropout,
                               "_lr",learn_rate,
-                              "_adam",
-                              "_2019-10-06",".h5"))
+                              "_adam",".h5"))
 
 

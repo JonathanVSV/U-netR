@@ -37,7 +37,7 @@ img_height_pred <- 128
 imagery <- "OpticRadar"
 
 #Folder containing the npz file
-train_image_files_path <- file.path(paste0("D:/Drive/Jonathan_trabaggio/Doctorado/R/PhD_DeepLearning/Img_Preprocess"))
+train_image_files_path <- file.path(paste0("Img_Preprocess"))
 #---------------------------Read inputs-------------------------
 
 # RDS option
@@ -52,7 +52,7 @@ train_image_files_path <- file.path(paste0("D:/Drive/Jonathan_trabaggio/Doctorad
 np <- import("numpy")
 
 # Load npz
-npz2 <- np$load(paste0(train_image_files_path,"/","Lacandona_LULC_2019_OpticRadar.npz"))
+npz2 <- np$load(paste0(train_image_files_path,"/","train_test_sets.npz"))
 # See files
 # npz2$files
 
@@ -80,7 +80,13 @@ dice <- custom_metric("dice", function(y_true, y_pred, smooth = 1) {
 })
 
 
-model <- load_model_hdf5(paste0("modelEpochs1000_lr7e-04_adam_S2_2019-07-04",".h5"),
+model <- load_model_hdf5( paste0("U128model",imagery,
+                                 "filters", filters_firstlayer,
+                                 "Epochs",epochs,
+                                 "layers",num_layers,
+                                 "dropout", dropout,
+                                 "_lr",learn_rate,
+                                 "_adam",".h5"),
                         custom_objects = c("dice" = dice))
 
 
