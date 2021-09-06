@@ -1,6 +1,6 @@
 # U-netR
 
-The repository contains 4 scripts to fit a U-net model using keras (tensorflow backend) in R. 
+The repository contains several scripts used to fit a U-net model using keras (tensorflow backend) in R. 
 
 1.Img_preprocess makes some pre preprocessing and augmentation of the data. This script transform each pair of x (optic and radar images) and y (manually labeled images (256 x 256 px)) into arrays that contain the training and test set of augumented images. In this procedure for each 256 x 256 px image, 75 128 x 128 px images are generated. From these latter, 25 images correspond to cropped images (using an offset of 32 pixels), 25 to vertically mirrored images and 25 to horizontally mirrored images. Finally the images are stored in arrays and saves as an "npz" file. ImageAugument_crop4Training contains the preprocessing steps and augmentation procedures applied to the training data, prior to training the U-net with these data. CompleteImage_crop4prediction makes the necessary preprocessing steps to make a prediction over the complete study area.
 
