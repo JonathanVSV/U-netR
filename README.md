@@ -9,3 +9,7 @@ The repository contains several scripts used to fit a U-net model using keras (t
 3.ResulEval contains a script that loads the previously saved model (highest f1-score) and generates the predicted images for the test set. Additionally, the error matrix, accuracy and f1-score are calculated for the test set.
 
 The 4.FinalClassification folder contains the LULC obtained for the complete study area.
+
+Preview of the final LULC classification obtained with U-net MS+SAR.
+
+![U-net LULC](/4.FinalClassification/preview.png?raw=true "MX 1 - 3 months mosaics")
