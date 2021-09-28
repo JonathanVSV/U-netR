@@ -40,8 +40,8 @@
   
   
   # Number of 128pix-squares that are going to be obtained per 256 pix-squares
-  # In this case we are going to use 25 (5 x 5 128 x 128 pix) using a 32 pix offset
-  # This is cropping the image as 1-129, 1-129; 33-161, 1-129; 65-193, 1-129; 97-225, 1-129; 129-256, 1-129 
+  # In this case we are going to use 27 (9 x 3 128 x 128 pix squares) using a 64 pix offset
+  # This is cropping the image as 1-129, 1-129; 65-161, 1-129; 129-193, 1-129 etc.
   num_squares <- 3^2
   probs_4crops <- 1 / (sqrt(num_squares)-1) 
   # Number of mirrored images per 128pix-image
@@ -78,8 +78,7 @@
   
   # Labels: Read files of manually classificated areas 
   # Optic labeles
-  masks_list <- paste0("manualLULCinfo",
-                                                ".shp")
+  masks_list <- paste0("manualLULCinfo",".shp")
   # # Radar labels
   # masks_list <- paste0("D:/Drive/Jonathan_trabaggio/Doctorado/GeoInfo/TiposVeg_points/4SingleMaskRadar/new_corrected/SinglePolys_4array_corrected",
   # ".shp")
