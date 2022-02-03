@@ -8,7 +8,7 @@ The repository contains several scripts used to fit a U-net model using keras (t
 
 3.ResulEval contains a script that loads the previously saved model (highest f1-score) and generates the predicted images for the test set. Additionally, the error matrix, accuracy and f1-score are calculated for the test set. In order to make the prediction over the complete study area, this same script can be used to make the predictions over the two grids generated in the CompleteImage_crop4prediction script
 
-The 4.FinalClassification folder contains the script to combine the predictions made for the complete study area setting the class as the one with the highest probability in either of the two grids used to make the predictions (Final_Unet_ensemble). Additionally, the LULC map obtained for the complete study area is available in this folder.
+The 4.FinalClassification folder contains the scripts first, to make the predictions and get the probabilities of corresponding to each class for the complete study area. Then these predictions and probabilities are used to set the class as the one with the highest probability in either of the two grids used to make the predictions (Final_Unet_ensemble). Additionally, the LULC map obtained for the complete study area is available in this folder.
 
 Preview of the final LULC classification obtained with U-net MS+SAR.
 
