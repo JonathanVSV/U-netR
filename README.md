@@ -12,6 +12,10 @@ The structure of the repository is the following:
 
 The 4.FinalClassification folder contains two scripts. The first one (Predict_Fullimage.R), makes the class predictions and get the probabilities of corresponding to each class for the complete study area. This script makes the predictions using two different grids, where the center of one grid overlaps with the edges of the other. Then these predictions and probabilities are used to set the class as the one with the highest probability in either of the two grids used to make the predictions (Final_Unet_ensemble). Additionally, the LULC map obtained for the complete study area is available in this folder.
 
+Visualization of the U-Net model, made with [PlotNeuralNet](https://github.com/HarisIqbal88/PlotNeuralNet)
+
+![U-net LULC](/4.FinalClassification/unet2d.jpg?raw=true "U-net diagram")
+
 Preview of the final LULC classification obtained with U-net MS+SAR.
 
-![U-net LULC](/4.FinalClassification/preview.png?raw=true "MX 1 - 3 months mosaics")
+![U-net LULC](/4.FinalClassification/preview.png?raw=true "LULC classification")
